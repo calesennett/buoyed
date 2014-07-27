@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+  div(class='header')
+    div(class='row')
+      div(class='copy large-6 large-centered columns')
+        img(height="100px", width="100px", alt="Keeping people afloat.", src="../images/logo.png")
+        h1 Buoyed
+        p Keeping people afloat.
+        a(href="new", class='base-button') Encourage someone
+
+  - each message in messages
+    p(class='message') #{message.body}

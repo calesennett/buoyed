@@ -1,0 +1,6 @@
+extends ../layout
+
+block content
+  form(action='/messages', method="POST")
+    textarea(name='message', rows="12", placeholder='Encourage someone...')
+    button(type='submit') Submit
