@@ -16,6 +16,10 @@ block content
       .row.message
         .large-4.columns.medium-12.large-offset-2.text
           p(class='message') #{message.body}
+          .row.tags
+            - each tag in message.tags
+              .tag
+                p #{tag}
         .large-4.columns.medium-6
           p.upvotes + #{message.upvotes}
           button(class='base-button').
