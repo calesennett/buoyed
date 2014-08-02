@@ -1,13 +1,22 @@
 extends ../layout
 
-block content
-  div(class='header')
-    div(class='row')
+block header
+  .header
+    .row
       div(class='copy large-6 large-centered columns')
-        img(height="100px", width="100px", alt="Keeping people afloat.", src="../images/logo.png")
-        h1 Buoyed
+        a(href='/')
+          img(height="100px", width="100px", alt="Keeping people afloat.", title="Keeping people afloat." src="../images/logo.png")
+          h1 Buoyed
         p Keeping people afloat.
-        a(href="new", class='base-button') Encourage someone
+        a(href="new", class='base-button front') Encourage someone
 
-  - each message in messages
-    p(class='message') #{message.body}
+block content
+  .messages
+    - each message in messages
+      .row.message
+        .large-4.columns.medium-12.large-offset-2.text
+          p(class='message') #{message.body}
+        .large-4.columns.medium-6
+          p.upvotes + #{message.upvotes}
+          button(class='base-button').
+            Like

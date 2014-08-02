@@ -5,32 +5,65 @@ h1, h2, h3, h4, h5, h6, p, a {
   font-family: "Source Sans Pro", sans-serif;
 }
 
+@import 'navbar';
+
 .base-button {
-  transition: background-color 0.2s ease;
-  -webkit-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  -webkit-transition: background-color 0.2s ease, color 0.2s ease;
   text-decoration: none;
-  background-color: $base-accent-color;
-  color: white;
+  border: 1px solid $secondary-accent-color;
+  background-color: transparent;
+  color: $secondary-accent-color;
   border-radius: 10em;
-  padding: 0.75em 2.5em;
+  padding: 0.75em 2em;
   text-align: center;
 
   &:hover {
     color: white;
-    background-color: #35B4AB;
+    background-color: $secondary-accent-color;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.front {
+  color: white;
+  border-color: white;
+
+  &:hover {
+    background-color: white;
+    color: $secondary-accent-color;
+  }
+}
+
+.sec-button {
+  background-color: transparent;
+  border: 1px solid $secondary-accent-color;
+  color: $secondary-accent-color;
+  &:hover {
+    background-color: $secondary-accent-color;
+  }
+  &:focus {
+    outline: 0;
   }
 }
 
 .header {
-  background-image: url('../images/air-background.png');
-  background-size: cover;
-  background-position: bottom;
+  // background-image: url('../images/air-background.png');
+  // background-size: cover;
+  // background-position: bottom;
+  background-color: $secondary-accent-color;
   min-height: 20em;
   .copy {
     text-align: center;
 
+    a {
+      display: inline;
+    }
     img {
-      margin-top: 2em;
+      padding-top: 2em;
       margin-bottom: -7em;
     }
 
@@ -47,5 +80,84 @@ h1, h2, h3, h4, h5, h6, p, a {
       margin-top: -1em;
       margin-bottom: 1.5em;
     }
+  }
+}
+
+.head {
+  padding-top: 2em;
+  padding-bottom: 0;
+  color: $secondary-accent-color;
+  h2 {
+    color: $secondary-accent-color;
+  }
+
+  .tag-header {
+    margin-bottom: 0;
+    font-size: 0.8em;
+  }
+
+  input[type=text] {
+    font-family: 'Merriweather', serif;
+    outline-width: 1px;
+    font-size: 16px;
+    box-shadow: none;
+    border-radius: 10em;
+    padding-left: 1em;
+    font-weight: 100;
+    color: $secondary-accent-color;
+    
+
+    &:focus {
+      color: black;
+      background-color: transparent;
+    }
+  }
+
+  textarea {
+    font-family: 'Merriweather', serif;
+    font-weight: 100;
+    font-size: 18px;
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+    resize: none;
+    line-height: 28px;
+
+    &:focus {
+      box-shadow: none;
+      background-color: transparent;
+    }
+  }
+}
+
+#submit {
+  text-align: center;
+}
+
+#editor {
+  p {
+    font-weight: 100;
+  }
+  padding: 1em 1em;
+}
+
+.messages {
+  padding-top: 3em;
+  .message {
+    .text {
+      margin-top: 0.5em;
+    }
+    p {
+      border-top: 0;
+      margin-bottom: -1em;
+    }
+    .upvotes {
+      margin-right: 10px;
+    }
+    padding: 20px 0 0 0;
+    border-top: 1px solid rgba(0,0,0,0.5);
+  }
+  p {
+    display: inline;
   }
 }

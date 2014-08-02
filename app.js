@@ -28,10 +28,12 @@ app.use(sass.middleware({
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/bower_components',  express.static(__dirname + '/bower_components'));
 
-var routes = require('./routes/index');
+/* Routing */
+var pages = require('./routes/pages');
 var messages = require('./routes/messages');
 
 app.use('/', messages);
+app.use('/', pages);
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {

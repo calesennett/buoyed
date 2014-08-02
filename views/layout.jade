@@ -2,10 +2,15 @@ doctype html
 html
   head
     title= title
+    script(type='text/javascript', src='/bower_components/medium.js/medium.js')
+    link(rel='stylesheet' href='/bower_components/medium.js/medium.css')
+    link(rel='stylesheet' href='/bower_components/animate.css/animate.css')
     link(rel='stylesheet', href='/bower_components/foundation/css/foundation.css')
     link(href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900' rel='stylesheet' type='text/css')
+    link(rel="stylesheet", href="//brick.a.ssl.fastly.net/Merriweather:200,400")
     link(rel='stylesheet', href='/stylesheets/style.css')
-
     meta(name='viewport', content='width=device-width, user-scalable=no')
   body
+    block navbar
+    block header
     block content

@@ -1,6 +1,26 @@
 extends ../layout
 
+block navbar
+  .nav
+    .row
+      div(class='large-1 medium-2 small-4 columns')
+        a(href='/')
+          img(height='50px', width='50px', src='/images/logo-full.png', title='Buoyed', alt='Buoyed')
+      div(class='large-2 large-offset-9 medium-2 medium-offset-8 small-4 small-offset-4 columns')
+        ul.nav-list
+          li
+            a(href="about"). 
+              About
+
+            
+
 block content
-  form(action='/messages', method="POST")
-    textarea(name='message', rows="12", placeholder='Encourage someone...')
-    button(type='submit') Submit
+  .row
+    form(class='head medium-6 medium-centered large-6 large-centered columns' action='/messages', method="POST")
+      h2 Encourage Someone
+      textarea(rows='5', class='no-outline', name='message', placeholder='Type here..', autofocus='true')
+      p(class='tag-header').
+        Separate tags with a comma
+      input(type='text', name='tags', placeholder='startups, depression, marriage')
+      button(type='submit' class='base-button').
+        Submit Post
